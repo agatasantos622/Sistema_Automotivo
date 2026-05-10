@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Sistema Automotivo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Sistema Automotivo 🚗</h1>
+
+        <!-- MENSAGEM -->
+        <div id="mensagem"></div>
+
+        <!-- PESQUISA -->
+        <input type="text"
+               id="pesquisa"
+               placeholder="Pesquisar por qualquer informação do veículo"
+               onkeyup="filtrarVeiculos()">
+
+        <!-- DASHBOARD -->
+        <div class="dashboard">
+
+            <div class="card-dashboard">
+
+                <h3>Total</h3>
+
+                <p id="totalVeiculos">0</p>
+
+            </div>
+
+            <div class="card-dashboard disponivel">
+
+                <h3>Disponíveis</h3>
+
+                <p id="totalDisponiveis">0</p>
+
+            </div>
+
+            <div class="card-dashboard indisponivel">
+
+                <h3>Indisponíveis</h3>
+
+                <p id="totalIndisponiveis">0</p>
+
+            </div>
+
+            <div class="card-dashboard estoque">
+
+                <h3>Valor Estoque</h3>
+
+                <p id="valorEstoque">R$ 0</p>
+
+            </div>
+
+        </div>
+
+        <!-- CONTADOR -->
+        <h3 id="contadorVeiculos"></h3>
+
+        <!-- FORMULÁRIO -->
+        <div class="formulario">
+
+            <input type="text"
+                   id="modelo"
+                   placeholder="Modelo">
+
+            <input type="text"
+                   id="marca"
+                   placeholder="Marca">
+
+            <input type="number"
+                   id="ano"
+                   placeholder="Ano"
+                   min="1900">
+
+            <input type="text"
+                   id="cor"
+                   placeholder="Cor">
+
+            <input type="number"
+                   id="preco"
+                   placeholder="Preço"
+                   min="0">
+
+            <input type="number"
+                   id="quilometragem"
+                   placeholder="Quilometragem"
+                   min="0">
+
+            <select id="status">
+
+                <option value="">
+                    Selecione o Status
+                </option>
+
+                <option value="Disponível">
+                    Disponível
+                </option>
+
+                <option value="Indisponível">
+                    Indisponível
+                </option>
+
+            </select>
+
+            <button onclick="cadastrarVeiculo()">
+                Cadastrar
+            </button>
+
+            <button id="botaoAtualizar"
+                    onclick="atualizarVeiculo()"
+                    style="display: none; background-color: orange;">
+
+                Atualizar
+
+            </button>
+
+        </div>
+
+        <!-- TABELA -->
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Modelo</th>
+                    <th>Marca</th>
+                    <th>Ano</th>
+                    <th>Cor</th>
+                    <th>Preço</th>
+                    <th>KM</th>
+                    <th>Status</th>
+                    <th>Ações</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tabelaVeiculos">
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
